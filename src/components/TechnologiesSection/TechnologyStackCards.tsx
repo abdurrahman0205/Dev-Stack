@@ -1,13 +1,23 @@
 import { FaStar } from "react-icons/fa";
 import type { TechDataType } from "../types/type";
+import { useState, type Dispatch, type SetStateAction } from "react";
+
 
 interface TechnologyStackCardsProps{
   data: TechDataType;
+  selectedStack: TechDataType[],
+  setSelectedStack: Dispatch<SetStateAction<TechDataType[]>>
 }
 
-const TechnologyStackCards = ({data}:TechnologyStackCardsProps) => {
+const TechnologyStackCards = ({data, selectedStack, setSelectedStack  }:TechnologyStackCardsProps) => {
   
-  console.log(data, 'data from tehcstaccard');
+  const [isClicked, setIsClicked] = useState(false);
+  
+  const handleAddToStack = (addedStack: TechDataType) => {
+    setIsClicked(true);
+    setSelectedStack([...selectedStack, addedStack]);
+    console.log(selectedStack);
+  }
 
   return (
     <div className="p-5 px-4 pt-6 rounded-xl shadow-sm border border-[#adadad40]">
@@ -26,7 +36,13 @@ const TechnologyStackCards = ({data}:TechnologyStackCardsProps) => {
         <p className="text-[#334155] flex items-center gap-0.5"><FaStar color="orange" />
  {data.rating}</p>
       </div>
-      <button className="bg-black w-full py-1.5 mx auto rounded text-white cursor-pointer ">Add to Stack</button>
+      <button
+        onClick={()=> handleAddToStack(data)}
+        className={`bg-black w-full py-1.5 mx auto rounded text-white cursor-pointer`}>
+          
+        {isClicked ? '✓ Added to Stack' : 'Add to Stack'}</button>
+  
+
     </div>
   );
 };

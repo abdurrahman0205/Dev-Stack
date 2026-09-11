@@ -1,12 +1,15 @@
+import type { Dispatch, SetStateAction } from "react";
 import type { TechDataType } from "../types/type";
 import TechnologyStackCards from "./TechnologyStackCards";
 
 interface TechnologyStackProps {
-  techData:TechDataType[];
+  techData: TechDataType[],
+  selectedStack: TechDataType[],
+  setSelectedStack: Dispatch<SetStateAction<TechDataType[]>>
 }
 
 
-const TechnologyStack = ({ techData }: TechnologyStackProps) => {
+const TechnologyStack = ({ techData, selectedStack, setSelectedStack }: TechnologyStackProps) => {
   
 
   return (
@@ -16,7 +19,7 @@ const TechnologyStack = ({ techData }: TechnologyStackProps) => {
           
           return (
             <div>
-              <TechnologyStackCards data={data} />
+              <TechnologyStackCards data={data} selectedStack={selectedStack} setSelectedStack={setSelectedStack} />
             </div>
           )
         })
