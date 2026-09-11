@@ -4,10 +4,19 @@ import YourStackCard from "./YourStackCard";
 
 interface YourStackProps {
   selectedStack: TechDataType[],
-  setSelectedStack: Dispatch<SetStateAction<TechDataType[]>>
+  setSelectedStack: Dispatch<SetStateAction<TechDataType[]>>,
+  isClicked: boolean,
+  setIsClicked: Dispatch<SetStateAction<boolean>>
 }
-const YourStack = ({selectedStack, setSelectedStack}: YourStackProps) => {
+const YourStack = ({selectedStack, setSelectedStack, isClicked, setIsClicked}: YourStackProps) => {
   
+
+  const handleRemoveAllSelection = () => {
+    setSelectedStack([])
+  }
+
+
+
 
   if (selectedStack.length === 0) {
     
@@ -37,7 +46,7 @@ const YourStack = ({selectedStack, setSelectedStack}: YourStackProps) => {
             
             return (
               <div>
-                <YourStackCard data={data} selectedStack={selectedStack} setSelectedStack={setSelectedStack} />
+                <YourStackCard data={data} selectedStack={selectedStack} setSelectedStack={setSelectedStack} isClicked = {isClicked}  setIsClicked={setIsClicked} />
               </div>
             )
           })
@@ -45,7 +54,9 @@ const YourStack = ({selectedStack, setSelectedStack}: YourStackProps) => {
       </div>
 
       
-        <button className="btn mt-6 w-full text-red-500 rounded-md">Remove all</button>
+      <button
+        onClick={()=> handleRemoveAllSelection()}
+        className="btn mt-6 w-full text-red-500 rounded-md">Remove all</button>
     </div>
   );
 };

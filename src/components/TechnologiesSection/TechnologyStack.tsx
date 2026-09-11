@@ -5,11 +5,13 @@ import TechnologyStackCards from "./TechnologyStackCards";
 interface TechnologyStackProps {
   techData: TechDataType[],
   selectedStack: TechDataType[],
-  setSelectedStack: Dispatch<SetStateAction<TechDataType[]>>
+  setSelectedStack: Dispatch<SetStateAction<TechDataType[]>>,
+  isClicked: boolean,
+  setIsClicked: Dispatch<SetStateAction<boolean>>
 }
 
 
-const TechnologyStack = ({ techData, selectedStack, setSelectedStack }: TechnologyStackProps) => {
+const TechnologyStack = ({ techData, selectedStack, setSelectedStack, isClicked, setIsClicked }: TechnologyStackProps) => {
   
 
   return (
@@ -19,7 +21,7 @@ const TechnologyStack = ({ techData, selectedStack, setSelectedStack }: Technolo
           
           return (
             <div>
-              <TechnologyStackCards data={data} selectedStack={selectedStack} setSelectedStack={setSelectedStack} />
+              <TechnologyStackCards data={data} selectedStack={selectedStack} setSelectedStack={setSelectedStack} isClicked = {isClicked}  setIsClicked={setIsClicked} />
             </div>
           )
         })

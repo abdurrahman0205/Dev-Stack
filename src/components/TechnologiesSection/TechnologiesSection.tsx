@@ -13,6 +13,7 @@ const TechnologiesSection = ({TechnologiesDataPromise}:TechnologiesSectionProps)
   
   const techData = use(TechnologiesDataPromise);
   const [selectedStack, setSelectedStack] = useState<TechDataType[]>([])
+  const [isClicked, setIsClicked] = useState<boolean>(false);
 
   return (
     <section>
@@ -23,10 +24,10 @@ const TechnologiesSection = ({TechnologiesDataPromise}:TechnologiesSectionProps)
         </div>
         <div className="grid grid-cols-12 gap-3 mt-3">
           <div className="col-span-9">
-            <TechnologyStack techData={techData} selectedStack={selectedStack} setSelectedStack={setSelectedStack} />
+            <TechnologyStack techData={techData} selectedStack={selectedStack} setSelectedStack={setSelectedStack} isClicked = {isClicked}  setIsClicked={setIsClicked} />
           </div>
           <div className="col-span-3">
-            <YourStack selectedStack={selectedStack} setSelectedStack={setSelectedStack} />
+            <YourStack selectedStack={selectedStack} setSelectedStack={setSelectedStack} isClicked = {isClicked}  setIsClicked={setIsClicked} />
           </div>
         </div>
       </div>

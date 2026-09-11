@@ -6,18 +6,21 @@ import { useState, type Dispatch, type SetStateAction } from "react";
 interface TechnologyStackCardsProps{
   data: TechDataType;
   selectedStack: TechDataType[],
-  setSelectedStack: Dispatch<SetStateAction<TechDataType[]>>
+  setSelectedStack: Dispatch<SetStateAction<TechDataType[]>>,
+  isClicked: boolean,
+  setIsClicked: Dispatch<SetStateAction<boolean>>
 }
 
-const TechnologyStackCards = ({data, selectedStack, setSelectedStack  }:TechnologyStackCardsProps) => {
+const TechnologyStackCards = ({data, selectedStack, setSelectedStack, isClicked, setIsClicked }:TechnologyStackCardsProps) => {
   
-  const [isClicked, setIsClicked] = useState(false);
+
   
   const handleAddToStack = (addedStack: TechDataType) => {
     setIsClicked(true);
     setSelectedStack([...selectedStack, addedStack]);
-    console.log(selectedStack);
+  
   }
+ 
 
   return (
     <div className="p-5 px-4 pt-6 rounded-xl shadow-sm border border-[#adadad40]">

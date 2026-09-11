@@ -5,11 +5,18 @@ import { RxCross2 } from "react-icons/rx";
 interface YourStackCardProps {
   data: TechDataType,
   selectedStack: TechDataType[],
-  setSelectedStack: Dispatch<SetStateAction<TechDataType[]>>
+  setSelectedStack: Dispatch<SetStateAction<TechDataType[]>>,
+  isClicked: boolean,
+  setIsClicked: Dispatch<SetStateAction<boolean>>
 }
 
-const YourStackCard = ({ data, selectedStack, setSelectedStack }: YourStackCardProps) => {
+const YourStackCard = ({ data, selectedStack, setSelectedStack, isClicked, setIsClicked }: YourStackCardProps) => {
   
+  const handleRemoveSelectedStack = (removeStack:TechDataType) => {
+   const restStack = selectedStack.filter(currentStack => currentStack.name !== removeStack.name);
+    setSelectedStack(restStack);
+    setIsClicked(false);
+  }
 
   return (
     <div>
@@ -21,7 +28,10 @@ const YourStackCard = ({ data, selectedStack, setSelectedStack }: YourStackCardP
             <p className="text-[11px] text-[#94A3B8]">{data.category}</p>
           </div>
         </div>
-        <RxCross2 color="#94A3B8" fontSize='24px' />
+        <span onClick={() => handleRemoveSelectedStack(data)}
+          className="cursor-pointer">
+          <RxCross2 color="#94A3B8" fontSize='24px' />
+        </span>
       </div>
     </div>
   );
