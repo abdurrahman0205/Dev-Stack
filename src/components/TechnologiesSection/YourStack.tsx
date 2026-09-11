@@ -1,6 +1,7 @@
 import type { Dispatch, SetStateAction } from "react";
 import type { TechDataType } from "../types/type";
 import YourStackCard from "./YourStackCard";
+import { Bounce, toast } from "react-toastify";
 
 interface YourStackProps {
   selectedStack: TechDataType[],
@@ -12,7 +13,18 @@ const YourStack = ({selectedStack, setSelectedStack, isClicked, setIsClicked}: Y
   
 
   const handleRemoveAllSelection = () => {
-    setSelectedStack([])
+    setSelectedStack([]);
+    toast.success(`Removed All Stack`, {
+position: "top-right",
+autoClose: 1000,
+hideProgressBar: true,
+closeOnClick: false,
+pauseOnHover: true,
+draggable: true,
+progress: undefined,
+theme: "light",
+transition: Bounce,
+});
   }
 
 

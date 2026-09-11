@@ -148,5 +148,15 @@
     "rating": 4.9,
     "difficulty": "Beginner-Friendly",
     "badge": "Popular"
+  },
+  {
+    "id": "github",
+    "name": "GitHub",
+    "category": "Tools",
+    "description": "A developer platform for hosting Git repositories, collaborating on code, and managing software projects.",
+    "icon": "https://icon.icepanel.io/Technology/svg/GitHub.svg",
+    "rating": 4.9,
+    "difficulty": "Beginner-Friendly",
+    "badge": "Popular"
   }
 ]

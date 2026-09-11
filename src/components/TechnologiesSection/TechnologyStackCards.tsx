@@ -1,6 +1,7 @@
 import { FaStar } from "react-icons/fa";
 import type { TechDataType } from "../types/type";
 import { useState, type Dispatch, type SetStateAction } from "react";
+import { Bounce, toast } from "react-toastify";
 
 
 interface TechnologyStackCardsProps{
@@ -13,14 +14,26 @@ interface TechnologyStackCardsProps{
 
 const TechnologyStackCards = ({data, selectedStack, setSelectedStack, isClicked, setIsClicked }:TechnologyStackCardsProps) => {
   
+  const [isSelected, setIsSelected] = useState<boolean>(false)
 
   
   const handleAddToStack = (addedStack: TechDataType) => {
-    setIsClicked(true);
+    
     setSelectedStack([...selectedStack, addedStack]);
-  
+    setIsSelected(true);
+    toast.success(`Successfully added ${data.name} Stack`, {
+position: "top-right",
+autoClose: 1000,
+hideProgressBar: true,
+closeOnClick: false,
+pauseOnHover: true,
+draggable: true,
+progress: undefined,
+theme: "light",
+transition: Bounce,
+});
+
   }
- 
 
   return (
     <div className="p-5 px-4 pt-6 rounded-xl shadow-sm border border-[#adadad40]">
@@ -41,9 +54,9 @@ const TechnologyStackCards = ({data, selectedStack, setSelectedStack, isClicked,
       </div>
       <button
         onClick={()=> handleAddToStack(data)}
-        className={`bg-black w-full py-1.5 mx auto rounded text-white cursor-pointer disabled:opacity-50`} disabled={isClicked? true:false}>
+        className={`bg-black w-full py-1.5 mx auto rounded text-white cursor-pointer disabled:opacity-50`} disabled={isSelected?true:false}>
           
-        {isClicked ? '✓ Added to Stack' : 'Add to Stack'}</button>
+        {isSelected ? '✓ Added to Stack' : 'Add to Stack'}</button>
  
     </div>
   );
