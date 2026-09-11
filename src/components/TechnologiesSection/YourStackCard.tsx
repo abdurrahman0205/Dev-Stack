@@ -1,0 +1,30 @@
+import type { Dispatch, SetStateAction } from "react";
+import type { TechDataType } from "../types/type";
+import { RxCross2 } from "react-icons/rx";
+
+interface YourStackCardProps {
+  data: TechDataType,
+  selectedStack: TechDataType[],
+  setSelectedStack: Dispatch<SetStateAction<TechDataType[]>>
+}
+
+const YourStackCard = ({ data, selectedStack, setSelectedStack }: YourStackCardProps) => {
+  
+
+  return (
+    <div>
+      <div className="flex justify-between items-center border border-gray-300 rounded-xl py-2 px-3">
+        <div className="flex items-center gap-2">
+          <img className="w-8" src={data.icon} alt="" />
+          <div>
+            <h2 className="text-[16px] font-semibold text-black">{data.name}</h2>
+            <p className="text-[11px] text-[#94A3B8]">{data.category}</p>
+          </div>
+        </div>
+        <RxCross2 color="#94A3B8" fontSize='24px' />
+      </div>
+    </div>
+  );
+};
+
+export default YourStackCard;

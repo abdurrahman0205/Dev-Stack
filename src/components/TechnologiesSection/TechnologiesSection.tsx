@@ -25,7 +25,9 @@ const TechnologiesSection = ({TechnologiesDataPromise}:TechnologiesSectionProps)
           <div className="col-span-9">
             <TechnologyStack techData={techData} selectedStack={selectedStack} setSelectedStack={setSelectedStack} />
           </div>
-          <div className="col-span-3"><YourStack/></div>
+          <div className="col-span-3">
+            <YourStack selectedStack={selectedStack} setSelectedStack={setSelectedStack} />
+          </div>
         </div>
       </div>
     </section>

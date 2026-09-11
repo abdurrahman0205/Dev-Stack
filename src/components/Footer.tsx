@@ -12,30 +12,30 @@ const Footer = () => {
             <p className="my-4">Curated tools, technologies, and resources for developers building
 modern software.</p>
             <ul className="text-[#475569] font-medium flex gap-4 mt-6">
-            <li className='cursor-pointer'>GitHub</li>
-            <li className='cursor-pointer'>Twitter</li>
-            <li className='cursor-pointer'>LinkedIn</li>
+            <li><a href="#">GitHub</a></li>
+            <li><a href="#">Twitter</a></li>
+            <li><a href="#">LinkedIn</a></li>
             </ul>
           </div>
           
           <ul className="col-span-2">
           <li className="font-semibold text-[#0F172A] text-[13px]">PRODUCT</li>
-          <li className='cursor-pointer mt-3'>Home</li>
-          <li className='cursor-pointer mt-1'>Technologies</li>
-          <li className='cursor-pointer mt-1'>Projects</li>
+          <li className='mt-3'><a href="#">Home</a></li>
+          <li className='mt-1'><a href="#">Technologies</a></li>
+          <li className='mt-1'><a href="#">Projects</a></li>
           </ul>
           
           <ul className="col-span-2">
           <li className="font-semibold text-[#0F172A] text-[13px]">COMPANY</li>
-          <li className='cursor-pointer mt-3'>About</li>
-          <li className='cursor-pointer mt-1'>Contact</li>
-          <li className='cursor-pointer mt-1'>Careers</li>
+          <li className='mt-3'><a href="#">About</a></li>
+          <li className='mt-1'><a href="#">Contact</a></li>
+          <li className='mt-1'><a href="#">Careers</a></li>
           </ul>
           
           <ul className="col-span-2">
           <li className="font-semibold text-[#0F172A] text-[13px]">LEGAL</li>
-          <li className='cursor-pointer mt-3'>Privacy Policy</li>
-          <li className='cursor-pointer mt-1'>Terms of Service</li>
+          <li className='mt-3'><a href="#">Privacy Policy</a></li>
+          <li className='mt-1'><a href="#">Terms of Service</a></li>
           </ul>
 
 
@@ -44,8 +44,8 @@ modern software.</p>
         <div className="grid grid-cols-2 items-center text-[12px] text-[#94A3B8] pb-11 pt-7 border-t border-[#F1F5F9]">
           <p className="justify-start">© 2026 Dev Stack. All rights reserved.</p>
           <ul className="flex gap-4 justify-end">
-            <li className='cursor-pointer mt-1'>Privacy</li>
-            <li className='cursor-pointer mt-1'>Terms</li>
+            <li className='mt-1'><a href="#">Privacy</a></li>
+            <li className='mt-1'><a href="#">Terms</a></li>
           </ul>
         </div>
 

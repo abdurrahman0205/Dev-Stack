@@ -27,7 +27,7 @@ const TechnologyStackCards = ({data, selectedStack, setSelectedStack  }:Technolo
         <p className="rounded">{data.badge}</p>
       </div>
 
-      <h1 className="text-xl font-semibold text-black mt-5">{data.name}</h1>
+      <h2 className="text-xl font-semibold text-black mt-5">{data.name}</h2>
       <p className="text-[12px] mt-2">{data.description}</p>
 
       <div className="flex justify-between text-[#475569] text-[12px] my-4">
@@ -38,11 +38,10 @@ const TechnologyStackCards = ({data, selectedStack, setSelectedStack  }:Technolo
       </div>
       <button
         onClick={()=> handleAddToStack(data)}
-        className={`bg-black w-full py-1.5 mx auto rounded text-white cursor-pointer`}>
+        className={`bg-black w-full py-1.5 mx auto rounded text-white cursor-pointer disabled:opacity-50`} disabled={isClicked? true:false}>
           
         {isClicked ? '✓ Added to Stack' : 'Add to Stack'}</button>
-  
-
+ 
     </div>
   );
 };
