@@ -23,7 +23,7 @@ function App() {
       <NavBar />
       <Banner />
       
-    <Suspense>
+    <Suspense fallback={<span className="loading mx-auto loading-spinner loading-xl"></span>}>
         <TechnologiesSection TechnologiesDataPromise={TechnologiesDataPromise} />
     </Suspense>
 
