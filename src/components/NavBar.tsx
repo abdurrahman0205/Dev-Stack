@@ -2,7 +2,7 @@ import Logo from '../assets/logo-text.png'
 
 const NavBar = () => {
   return (
-  <header className="border-b border-[#F1F5F9]">
+  <header className="border-b border-[#F1F5F9] fixed w-full bg-white">
       <nav className="container mx-auto py-3 flex justify-between items-center"> {/*max-w-7xl*/}
       
         <div>

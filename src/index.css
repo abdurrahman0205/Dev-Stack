@@ -3,9 +3,9 @@
 @import "tailwindcss";
 @plugin "daisyui";
 
-/* body{
+body{
   font-family: "Plus Jakarta Sans", sans-serif;
-} */
+}
 
 @theme {
   --font-Inter: "Inter", sans-serif;

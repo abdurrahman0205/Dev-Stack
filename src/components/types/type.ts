@@ -4,6 +4,7 @@ export interface TechDataType {
   category: string,
   description: string,
   icon: string,
+  color: string,
   rating: number,
   difficulty: string,
   badge: string 

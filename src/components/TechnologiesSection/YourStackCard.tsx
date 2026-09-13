@@ -6,27 +6,25 @@ import { Bounce, toast } from "react-toastify";
 interface YourStackCardProps {
   data: TechDataType,
   selectedStack: TechDataType[],
-  setSelectedStack: Dispatch<SetStateAction<TechDataType[]>>,
-  isClicked: boolean,
-  setIsClicked: Dispatch<SetStateAction<boolean>>
+  setSelectedStack: Dispatch<SetStateAction<TechDataType[]>>
 }
 
-const YourStackCard = ({ data, selectedStack, setSelectedStack, isClicked, setIsClicked }: YourStackCardProps) => {
+const YourStackCard = ({ data, selectedStack, setSelectedStack}: YourStackCardProps) => {
   
   const handleRemoveSelectedStack = (removeStack:TechDataType) => {
    const restStack = selectedStack.filter(currentStack => currentStack.name !== removeStack.name);
     setSelectedStack(restStack);
-    
     toast.error(`Removed ${data.name} Stack from Your Stack`, {
-position: "top-right",
-autoClose: 1000,
-hideProgressBar: true,
-closeOnClick: false,
-pauseOnHover: true,
-draggable: true,
-progress: undefined,
-theme: "dark",
-transition: Bounce,
+      position: "top-right",
+      icon: <RxCross2 color="red" fontSize='20px'/>,
+      hideProgressBar: true,
+      autoClose: 1000,
+      closeOnClick: false,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "dark",
+      transition: Bounce,
 });
 
   }

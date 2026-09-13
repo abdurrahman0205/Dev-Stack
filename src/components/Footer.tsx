@@ -2,7 +2,7 @@ import FooterLogo from '../assets/logo-text.png'
 
 const Footer = () => {
   return (
-    <footer>
+    <footer className=' mt-25 pt-22 border-t border-[#F1F5F9]'>
       <div className="container mx-auto">
 
         <div className=" pb-15 text-[#64748B] text-[13px] 

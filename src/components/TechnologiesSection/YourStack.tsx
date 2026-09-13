@@ -2,29 +2,29 @@ import type { Dispatch, SetStateAction } from "react";
 import type { TechDataType } from "../types/type";
 import YourStackCard from "./YourStackCard";
 import { Bounce, toast } from "react-toastify";
+import { RxCross2 } from "react-icons/rx";
 
 interface YourStackProps {
   selectedStack: TechDataType[],
-  setSelectedStack: Dispatch<SetStateAction<TechDataType[]>>,
-  isClicked: boolean,
-  setIsClicked: Dispatch<SetStateAction<boolean>>
+  setSelectedStack: Dispatch<SetStateAction<TechDataType[]>>
 }
-const YourStack = ({selectedStack, setSelectedStack, isClicked, setIsClicked}: YourStackProps) => {
+const YourStack = ({selectedStack, setSelectedStack}: YourStackProps) => {
   
 
   const handleRemoveAllSelection = () => {
     setSelectedStack([]);
     toast.success(`Removed All Stack`, {
-position: "top-right",
-autoClose: 1000,
-hideProgressBar: true,
-closeOnClick: false,
-pauseOnHover: true,
-draggable: true,
-progress: undefined,
-theme: "light",
-transition: Bounce,
-});
+      position: "top-right",
+      icon: <RxCross2 color="red" fontSize='20px'/>,
+      autoClose: 1000,
+      hideProgressBar: true,
+      closeOnClick: false,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "dark",
+      transition: Bounce,
+      });
   }
 
 
@@ -58,7 +58,7 @@ transition: Bounce,
             
             return (
               <div>
-                <YourStackCard data={data} selectedStack={selectedStack} setSelectedStack={setSelectedStack} isClicked = {isClicked}  setIsClicked={setIsClicked} />
+                <YourStackCard data={data} selectedStack={selectedStack} setSelectedStack={setSelectedStack} />
               </div>
             )
           })
