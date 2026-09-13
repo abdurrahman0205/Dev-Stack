@@ -3,9 +3,9 @@ import BannerImage from '../assets/banner-stack.png'
 const Banner = () => {
   return (
     <section className='pt-20 pb-15 '>
-      <div className='container max-w-5xl mx-auto md:items-center grid grid-cols-1 text-center lg:text-left md:grid-cols-2 py-10 lg:py-0 px-10 lg:px-0'>
+      <div className='container max-w-5xl mx-auto md:items-center grid grid-cols-1 text-center md:text-left md:grid-cols-2 py-10 lg:py-0 px-10 lg:px-0'>
 
-        <div className='lg:place-items-start'>
+        <div className='md:place-items-start'>
           <h1 className='text-5xl font-bold font-Inter'>Build Your Ideal
           <br/><span className='bg-linear-to-r from-[#FF5722] from-0% via-[#D81B7E] via-50% to-[#7C3AED] to-100% bg-clip-text text-transparent'>Development Stack</span></h1>
           
