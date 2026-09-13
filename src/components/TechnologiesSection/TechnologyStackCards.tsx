@@ -47,7 +47,7 @@ const TechnologyStackCards = ({ data, selectedStack, setSelectedStack }: Technol
 
         <div className="flex justify-between text-[#475569] text-[12px] border-t border-[#F1F5F9] pb-1 pt-2 mt-7 my-4">
           <p className="bg-[#F1F5F9] rounded px-1">{data.category}</p>
-          <p>{data.difficulty}</p>
+          <span className="px-1.5 whitespace-nowrap">{data.difficulty}</span>
           <p className="text-[#334155] flex items-center gap-0.5"><FaStar color="orange" />
             {data.rating}</p>
         </div>

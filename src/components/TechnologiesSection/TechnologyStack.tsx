@@ -18,7 +18,7 @@ const TechnologyStack = ({ techData, selectedStack, setSelectedStack}: Technolog
         techData.map((data) => {
           
           return (
-            <div>
+            <div key={data.id}>
               <TechnologyStackCards data={data} selectedStack={selectedStack} setSelectedStack={setSelectedStack} />
             </div>
           )
