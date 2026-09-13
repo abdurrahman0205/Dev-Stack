@@ -99,6 +99,17 @@
     "badge": "Popular"
   },
   {
+    "id": "react",
+    "name": "React",
+    "category": "Frontend",
+    "description": "A JavaScript library for building modern, interactive user interfaces with reusable components.",
+    "icon": "/icons/react.svg",
+    "color": "#61DAFB",
+    "rating": 4.9,
+    "difficulty": "Beginner-Friendly",
+    "badge": "Popular"
+  },
+  {
     "id": "tailwindcss",
     "name": "Tailwind CSS",
     "category": "Styling",
