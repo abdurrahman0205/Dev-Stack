@@ -19,7 +19,7 @@ const TechnologiesSection = ({TechnologiesDataPromise}:TechnologiesSectionProps)
 
   return (
     <section>
-      <div className="container mx-auto mb-15 text-[#64748B]">
+      <div className="container max-w-5xl mx-auto mb-15 text-[#64748B] px-10 lg:px-0">
         <div className="text-left">
           <h1 className="text-3xl font-Inter font-bold text-[#0F172A]">Explore the <span className="bg-linear-to-tr from-[#EC4899] from-10% to-[#8B5CF6] to-100% text-transparent bg-clip-text ">Technologies</span></h1>
           <p className="text-[16px] mt-3">Pick one technology per category to build your ideal stack.</p>
