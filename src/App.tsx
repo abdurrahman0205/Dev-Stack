@@ -8,7 +8,7 @@ import type { TechDataType } from './components/types/type'
 
 
 const fetchTechnologiesData = async (): Promise<TechDataType[]> => {
-  const res = await fetch('/public/data.json');
+  const res = await fetch('/data.json');
   const data = await res.json();
 
   return data;
